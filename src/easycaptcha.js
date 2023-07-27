@@ -120,37 +120,37 @@ function handleOneChild($group, i, options, AUTO_INIT) {
         if (meta.length !== 0) {
             settings.ReCAPTCHA_API_KEY_CLIENT = meta.attr('content');
         }
-        if ($this.attr('data-okbtn-selector') !== "") {
+        if (attrExist($this.attr('data-okbtn-selector'))) {
             settings.autoVerification.okBtn = $this.attr('data-okbtn-selector');
         }
-        if ($this.attr('data-recaptcha-apikey') !== "") {
+        if (attrExist($this.attr('data-recaptcha-apikey'))) {
             settings.ReCAPTCHA_API_KEY_CLIENT = $this.attr('data-recaptcha-apikey');
         }
-        if ($this.attr('data-required-msg-example-selector') !== "") {
+        if (attrExist($this.attr('data-required-msg-example-selector'))) {
             let e = $($this.attr('data-required-msg-example-selector')).clone();
             e.removeClass('hidden');
             e.removeClass('d-none');
             settings.autoVerification.requiredMsg = e;
         }
-        if ($this.attr('data-loading-msg-example-selector') !== "") {
+        if (attrExist($this.attr('data-loading-msg-example-selector'))) {
             let e = $($this.attr('data-loading-msg-example-selector')).clone();
             e.removeClass('hidden');
             e.removeClass('d-none');
             settings.apiScriptLoading.loadingMsg = e;
         }
-        if ($this.attr('data-error-msg-example-selector') !== "") {
+        if (attrExist($this.attr('data-error-msg-example-selector'))) {
             let e = $($this.attr('data-error-msg-example-selector')).clone();
             e.removeClass('hidden');
             e.removeClass('d-none');
             settings.apiScriptLoading.errorMsg = e;
         }
-        if ($this.attr('data-theme') !== "") {
+        if (attrExist($this.attr('data-theme'))) {
             settings.theme = $this.attr('data-theme');
         }
         data.settings = settings;
         changeBtnState(data, false);
         let idSuffix = Math.floor((Math.random() * 1000) + 100);
-        if ($this.attr('id') !== "") {
+        if (attrExist($this.attr('id'))) {
             $this.attr('id', idSuffix + "_ReCaptchaTargetParent");
         }
         data.parentId = $this.attr('id');
@@ -163,6 +163,7 @@ function handleOneChild($group, i, options, AUTO_INIT) {
             let $hiddenInput = $('<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" value="">');
             $hiddenInput.appendTo($this);
         }
+        $this.data('EasyCaptcha', data);
         startCheckingGoogleReCaptchaScript(data).then(
             function () {
                 handleOneChild($group, i+1, options, AUTO_INIT);
@@ -171,7 +172,6 @@ function handleOneChild($group, i, options, AUTO_INIT) {
                 settings.failure(error??"Unknown error");
             }
         );
-        $this.data('EasyCaptcha', data);
     } else {
         handleOneChild($group, i+1, options, AUTO_INIT);
     }
@@ -281,4 +281,8 @@ function changeBtnState(data, enable) {
         if (!enable) $okBtn.addClass('disabled');
         else $okBtn.removeClass('disabled');
     }
+}
+
+function attrExist(attr) {
+    return typeof attr !== 'undefined' && attr !== null && attr !== "";
 }
