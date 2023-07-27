@@ -115,7 +115,6 @@ function handleOneChild($group, i, options, AUTO_INIT) {
             failure: (error) => {
                 console.error(error);
             }
-
         }, options);
         let meta = $('meta[name="ReCAPTCHA_API_KEY_CLIENT"]');
         if (meta.length !== 0) {
@@ -123,6 +122,9 @@ function handleOneChild($group, i, options, AUTO_INIT) {
         }
         if ($this.attr('data-okbtn-selector') !== "") {
             settings.autoVerification.okBtn = $this.attr('data-okbtn-selector');
+        }
+        if ($this.attr('data-recaptcha-apikey') !== "") {
+            settings.ReCAPTCHA_API_KEY_CLIENT = $this.attr('data-recaptcha-apikey');
         }
         if ($this.attr('data-required-msg-example-selector') !== "") {
             let e = $($this.attr('data-required-msg-example-selector')).clone();

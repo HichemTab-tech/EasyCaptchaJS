@@ -9,34 +9,18 @@
 </head>
 <body>
 <form>
-    <div class="container">
+    <div class="container mt-3 col-6-md card p-5">
       <h1>EasyCaptchaJs</h1>
-        <label class="label">R1</label>
+        <label class="label">Hello</label>
         <div class="form-group">
-            <div class="captchaTarget" data-auto-easycaptcha data-okbtn-selector="#ok" data-loading-msg-example-selector="#loadingMsg"></div>
-        </div>
-        <br>
-        <label class="label">R2</label>
-        <div class="form-group">
-            <div class="captchaTarget"></div>
+            <div class="captchaTarget" data-auto-easycaptcha data-okbtn-selector="#ok"></div>
         </div>
         <div class="form-group">
             <button type="button" class="btn btn-primary" id="ok">OK</button>
         </div>
-        <div class="spinner-border text-danger d-none" id="loadingMsg" role="status"></div>
     </div>
 </form>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script src="dist/easycaptcha.js"></script>
-<script>
-  /*$(document).ready(function() {
-
-    $('#ok').on('click', function () {
-        $('.captchaTarget').EasyCaptcha('response').then((res) => {
-            console.log('response', res);
-        });
-    });
-  });*/
-</script>
 </body>
 </html>
