@@ -118,10 +118,6 @@ in this case you need to add the GOOGLE_RECAPTCHA_API_KEY_CLIENT in a meta tag i
 
 ## Examples
 
-
-
-## Examples
-
 ### Example 1: Auto Rendering with Data Attributes and okbtn Selector
 
 - Create an HTML file (index.html):

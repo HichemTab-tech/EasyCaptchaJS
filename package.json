@@ -7,6 +7,25 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js"
   },
+  "keywords": [
+    "javascript",
+    "jquery",
+    "front-end",
+    "jquery-plugin",
+    "web-development",
+    "web",
+    "captcha",
+    "google-recaptcha",
+    "javascript-library",
+    "recaptcha-api",
+    "captcha-generator",
+    "recaptcha-api-client",
+    "google-recaptcha-v2",
+    "auto-captcha",
+    "google-recaptcha-handler",
+    "captcha-handler",
+    "recaptcha-handler"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HichemTab-tech/EasyCaptchaJS.git"
