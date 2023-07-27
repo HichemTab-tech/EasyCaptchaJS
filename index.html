@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--suppress JSUnresolvedLibraryURL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EasyCaptchaJs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <meta name="ReCAPTCHA_API_KEY_CLIENT" content="6LcgtS4fAAAAADsTyzq_Mos5VC9zQ5wGuhtbLI0e">
+</head>
+<body>
+<form>
+    <div class="container">
+      <h1>EasyCaptchaJs</h1>
+        <label class="label">R1</label>
+        <div class="form-group">
+            <div class="captchaTarget" data-auto-easycaptcha data-okbtn-selector="#ok" data-loading-msg-example-selector="#loadingMsg"></div>
+        </div>
+        <br>
+        <label class="label">R2</label>
+        <div class="form-group">
+            <div class="captchaTarget"></div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" id="ok">OK</button>
+        </div>
+        <div class="spinner-border text-danger d-none" id="loadingMsg" role="status"></div>
+    </div>
+</form>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="dist/easycaptcha.js"></script>
+<script>
+  /*$(document).ready(function() {
+
+    $('#ok').on('click', function () {
+        $('.captchaTarget').EasyCaptcha('response').then((res) => {
+            console.log('response', res);
+        });
+    });
+  });*/
+</script>
+</body>
+</html>
