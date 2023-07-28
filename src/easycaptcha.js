@@ -91,7 +91,9 @@ function handleOneChild($group, i, options, AUTO_INIT) {
     if (!data) {
         data = {};
         data.AUTO_INIT = AUTO_INIT;
-        settings = $.extend({
+        settings = $.extend(
+            true,
+            {
             ReCAPTCHA_API_KEY_CLIENT: null,
             ReCaptchaSubmit: {
                 success: () => {
@@ -150,7 +152,7 @@ function handleOneChild($group, i, options, AUTO_INIT) {
         data.settings = settings;
         changeBtnState(data, false);
         let idSuffix = Math.floor((Math.random() * 1000) + 100);
-        if (attrExist($this.attr('id'))) {
+        if (!attrExist($this.attr('id'))) {
             $this.attr('id', idSuffix + "_ReCaptchaTargetParent");
         }
         data.parentId = $this.attr('id');
@@ -253,6 +255,7 @@ function initReCaptchaHandlers(data) {
 }
 
 function onReCAPTCHASubmitsSuccessfulResponse_default(data) {
+    console.log(data);
     data.settings.ReCaptchaSubmit.success();
     changeBtnState(data, true);
     fillHiddenInput(data, grecaptcha.getResponse(data.widgetId));
