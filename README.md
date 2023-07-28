@@ -58,7 +58,7 @@ You can install EasyCaptchaJS via npm:
 You can also include EasyCaptchaJS directly from a CDN by adding the following script tag to your HTML file:
 
 ```HTML
-    <script src="https://cdn.jsdelivr.net/gh/HichemTab-tech/EasyCaptchaJS@1.0.0/dist/easycaptcha.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HichemTab-tech/EasyCaptchaJS@1.0.1/dist/easycaptcha.min.js"></script>
 ```
     
 ### Local Download

@@ -255,7 +255,6 @@ function initReCaptchaHandlers(data) {
 }
 
 function onReCAPTCHASubmitsSuccessfulResponse_default(data) {
-    console.log(data);
     data.settings.ReCaptchaSubmit.success();
     changeBtnState(data, true);
     fillHiddenInput(data, grecaptcha.getResponse(data.widgetId));

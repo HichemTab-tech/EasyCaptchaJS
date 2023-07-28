@@ -1,5 +1,5 @@
 /*!
- * EasyCaptchaJS v1.0.0
+ * EasyCaptchaJS v1.0.1
  * (c) HichemTech
  * Released under the MIT License.
  * Github: https://github.com/HichemTab-tech/EasyCaptchaJS
@@ -317,7 +317,6 @@ function initReCaptchaHandlers(data) {
 }
 
 function onReCAPTCHASubmitsSuccessfulResponse_default(data) {
-    console.log(data);
     data.settings.ReCaptchaSubmit.success();
     changeBtnState(data, true);
     fillHiddenInput(data, grecaptcha.getResponse(data.widgetId));

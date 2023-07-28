@@ -7,7 +7,7 @@ const webpack = require("webpack");
 // noinspection JSUnresolvedReference
 let bannerPlugin = new webpack.BannerPlugin({
     banner: `/*!
- * EasyCaptchaJS v1.0.0
+ * EasyCaptchaJS v1.0.1
  * (c) HichemTech
  * Released under the MIT License.
  * Github: https://github.com/HichemTab-tech/EasyCaptchaJS
