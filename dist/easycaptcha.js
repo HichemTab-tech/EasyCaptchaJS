@@ -1,5 +1,5 @@
 /*!
- * EasyCaptchaJS v1.0.1
+ * EasyCaptchaJS v1.1.0
  * (c) HichemTech
  * Released under the MIT License.
  * Github: https://github.com/HichemTab-tech/EasyCaptchaJS
@@ -70,6 +70,26 @@ const EasyCaptcha = function (options = {}, ...args) {
     let results = [];
 
     const methods = {
+        'getTarget': function (results, data, args) {
+            if (args.length !== 0) {
+                if (args[0].startsWith('#')) args[0] = args[0].substring(1);
+                if (args[0] === data.parentId) {
+                    let res = {
+                        parentElement: $("#" + data.parentId),
+                        data: data
+                    };
+                    results.push(res);
+                }
+            }
+            else{
+                let res = {
+                    parentElement: $("#" + data.parentId),
+                    data: data
+                };
+                results.push(res);
+            }
+            return results;
+        },
         'verify': function (results, data, args) {
             if (args.length !== 0) {
                 if (args[0].startsWith('#')) args[0] = args[0].substring(1);
