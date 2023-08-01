@@ -1,6 +1,6 @@
 {
   "name": "easycaptchajs",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "EasyCaptchaJS is a lightweight and user-friendly jQuery/JS library that simplifies the integration of Google reCAPTCHA API into web pages. With EasyCaptchaJS, developers can effortlessly add the security and anti-bot protection of Google reCAPTCHA to their applications. The library dynamically imports the Google reCAPTCHA API script, handles event bindings and listeners, and initiates the reCAPTCHA checkbox within a specified parent container. Developers can take advantage of powerful options, including customizable success/failure listeners, verification checks, and a getter function to access the reCAPTCHA secret code for further processing. Streamline your web application's security with EasyCaptchaJS and ensure a smooth user experience.",
   "main": "index.js",
   "scripts": {

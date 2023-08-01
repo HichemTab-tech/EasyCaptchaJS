@@ -79,10 +79,9 @@ export const EasyCaptcha = function (options = {}, ...args) {
             return results;
         },
         'destroy': function (results, data) {
-            for (let i = 0; i < $(this).length; i++) {
-                $("#" + data.parentId).empty();
-                $($(this)[i]).removeData('EasyCaptcha');
-            }
+            let p = $("#" + data.parentId);
+            p.empty();
+            p.removeData('EasyCaptcha');
             return results;
         }
     };
@@ -215,7 +214,7 @@ async function startCheckingGoogleReCaptchaScript(data) {
 async function checkAndInitGoogleReCaptchaScript(myResolve, myReject, data) {
     const scriptApiUrl = 'https://www.google.com/recaptcha/api.js?onload=EasyCaptchaScriptCallback&render=explicit';
     let $EasyCaptchaScript = $('script[src="'+scriptApiUrl+'"]');
-    if ($EasyCaptchaScript.length === 0 || $EasyCaptchaScript.attr('loaded') === 'true') {
+    if ($EasyCaptchaScript.length === 0 || $EasyCaptchaScript.attr('loaded') !== 'true') {
         if ($EasyCaptchaScript.length !== 0) $EasyCaptchaScript.remove();
         let $alertsParent = $("#"+data.parentId).find('.alertsParent');
         $alertsParent.empty();
