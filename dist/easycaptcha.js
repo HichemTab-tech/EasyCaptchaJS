@@ -1,5 +1,5 @@
 /*!
- * EasyCaptchaJS v1.1.0
+ * EasyCaptchaJS v1.2.0
  * (c) HichemTech
  * Released under the MIT License.
  * Github: https://github.com/HichemTab-tech/EasyCaptchaJS
@@ -279,7 +279,6 @@ async function checkAndInitGoogleReCaptchaScript(myResolve, myReject, data) {
     if ($EasyCaptchaScript.length === 0 || $EasyCaptchaScript.attr('loaded') !== 'true') {
         if ($EasyCaptchaScript.length !== 0) $EasyCaptchaScript.remove();
         let $alertsParent = $("#"+data.parentId).find('.alertsParent');
-        console.log("qqqqq");
         $alertsParent.empty();
         let $loadingMsg = $(data.settings.apiScriptLoading.loadingMsg);
         $loadingMsg.appendTo($alertsParent);
@@ -293,7 +292,6 @@ async function checkAndInitGoogleReCaptchaScript(myResolve, myReject, data) {
         $newEasyCaptchaScript.async = true;
         $newEasyCaptchaScript.defer = true;
         $newEasyCaptchaScript.onerror = function () {
-            console.log('EasyCaptchaScript_FAILED');
             myReject("EasyCaptchaScript_FAILED");
             $alertsParent.empty();
             let $errorMsg = $(data.settings.apiScriptLoading.errorMsg);

@@ -1,10 +1,11 @@
 {
   "name": "easycaptchajs",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "EasyCaptchaJS is a lightweight and user-friendly jQuery/JS library that simplifies the integration of Google reCAPTCHA API into web pages. With EasyCaptchaJS, developers can effortlessly add the security and anti-bot protection of Google reCAPTCHA to their applications. The library dynamically imports the Google reCAPTCHA API script, handles event bindings and listeners, and initiates the reCAPTCHA checkbox within a specified parent container. Developers can take advantage of powerful options, including customizable success/failure listeners, verification checks, and a getter function to access the reCAPTCHA secret code for further processing. Streamline your web application's security with EasyCaptchaJS and ensure a smooth user experience.",
   "main": "index.js",
+  "types": "types/easycaptchajs/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tsd --files types/easycaptchajs/easycaptchajs-tests.ts",
     "build": "webpack --config webpack.config.js"
   },
   "keywords": [
@@ -37,11 +38,13 @@
   },
   "homepage": "https://github.com/HichemTab-tech/EasyCaptchaJS#readme",
   "dependencies": {
+    "@types/jquery": "^3.5.17",
     "jquery": "^3.7.0",
     "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.88.2"
   },
   "devDependencies": {
+    "tsd": "^0.29.0",
     "webpack-cli": "^5.1.4"
   }
 }
