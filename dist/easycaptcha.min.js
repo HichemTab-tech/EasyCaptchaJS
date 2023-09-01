@@ -1,5 +1,5 @@
 /*!
- * EasyCaptchaJS v1.2.0
+ * EasyCaptchaJS v1.2.1
  * (c) HichemTech
  * Released under the MIT License.
  * Github: https://github.com/HichemTab-tech/EasyCaptchaJS
